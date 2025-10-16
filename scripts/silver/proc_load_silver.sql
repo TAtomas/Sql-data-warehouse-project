@@ -1,3 +1,30 @@
+/*
+=============================================================
+Procedure Name: silver.load_silver
+Purpose: 
+    - Load and transform data from Bronze to Silver layer.
+    - Perform data cleaning, standardization, and quality checks.
+    - Handle errors gracefully and log total load time for each dataset.
+
+Features:
+    • Data Cleaning:
+        - Remove duplicates using ranking logic.
+        - Trim spaces and normalize text fields.
+        - Replace invalid or inconsistent values with standard ones.
+        - Fix invalid dates and handle missing values.
+        - Enforce data consistency across Silver tables.
+    • Error Handling:
+        - Catch and display error messages.
+    • Performance Tracking:
+        - Calculate and display the time taken to load each table 
+          and the total duration for the entire load process.
+
+Usage:
+    EXEC bronze.load_bronze;  -- Load Bronze layer first
+    EXEC silver.load_silver;  -- Then load Silver layer
+=============================================================
+*/
+
 CREATE OR ALTER PROCEDURE  silver.load_silver as
 begin
 	begin try
